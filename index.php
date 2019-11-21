@@ -19,6 +19,13 @@ include "dbh.inc";
             </h2>
         </div>
     </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <h3>
+                Eligijus Kiudys, IFF-7/14
+            </h3>
+        </div>
+    </div>
 </div>
 </body>
 <footer>
