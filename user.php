@@ -163,8 +163,10 @@ if(isset($_POST['discard']) && $_POST['discard'] != "")
         {
             if(mysqli_num_rows($res) > 0)
             {
+                $sum = 0;
                 while($row = mysqli_fetch_row($res))
                 {
+                    $sum = $sum + $row[9];
                     $phpDateOut = strtotime( $row[7] );
                     $mysqlDateOut = date( 'Y-m-d H:i:s', $phpDateOut );
                     echo "<tr>
@@ -176,6 +178,16 @@ if(isset($_POST['discard']) && $_POST['discard'] != "")
                                 <td><form method='post'><input type='hidden' name='id' value='".$row[3]."'><button name='discard' value='".htmlspecialchars($row[0])."'>Atšaukti užsakyma</button></form></td>
                               </tr>";
                 }
+                    echo "
+                    <tr>
+                                <th scope=\"row\"></th>
+                                <td></td>
+                                <td></td>
+                                <td>Bendra suma:</td>
+                                <td>".$sum."</td>
+                                <td></td>
+                    </tr>
+                    ";
             }
         }
 
